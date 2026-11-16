@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CoStudy — Encrypted Shared Study Space</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="gate" class="gate">
+    <div class="gate-card">
+      <div class="gate-badge">AES-256-GCM Encrypted</div>
+      <h1>CoStudy</h1>
+      <p class="gate-sub">Enter your shared Room Code, Username &amp; Secret Passcode to unlock your encrypted workspace.</p>
+      <form id="joinForm" data-f="join" class="col">
+        <label>Room Code
+          <input name="room" required placeholder="e.g., STUDY-2026" autocomplete="off">
+        </label>
+        <label>Username
+          <input name="user" required placeholder="e.g., sara_01" autocomplete="off">
+        </label>
+        <label>Shared Secret Passcode
+          <input name="pass" type="password" required minlength="8" placeholder="At least 8 characters">
+        </label>
+        <button id="join" class="btn">Join Study Room</button>
+        <button id="create" type="submit" class="btn-outline">Create New Room</button>
+        <p id="err" class="err"></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="app" hidden>
+    <header class="top">
+      <div class="brand"><span class="brand-dot"></span><b>CoStudy</b><span id="rb" class="pill"></span></div>
+      <nav>
+        <button data-a="tab:dash">Shared Dashboard</button>
+        <button data-a="tab:habits">Habits</button>
+        <button data-a="tab:goals">Goals</button>
+        <button data-a="tab:chat">Chat</button>
+        <button data-a="tab:prof">Profiles</button>
+        <button data-a="tab:me">My Private 🔒</button>
+      </nav>
+      <button class="sm" data-a="lock">Lock Room</button>
+    </header>
+    <main id="view" class="wrap"></main>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
